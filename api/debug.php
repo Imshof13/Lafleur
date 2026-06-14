@@ -2,6 +2,11 @@
 
 header('Content-Type: application/json');
 
+@mkdir('/tmp/framework/cache', 0777, true);
+@mkdir('/tmp/framework/sessions', 0777, true);
+@mkdir('/tmp/framework/views', 0777, true);
+@mkdir('/tmp/storage/logs', 0777, true);
+
 $checks = [
     'php_version' => PHP_VERSION,
     'vendor_autoload_exists' => file_exists(__DIR__.'/../vendor/autoload.php'),

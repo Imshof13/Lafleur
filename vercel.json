@@ -24,6 +24,10 @@
             "use": "vercel-php@0.7.4"
         },
         {
+            "src": "api/laravel-debug.php",
+            "use": "vercel-php@0.7.4"
+        },
+        {
             "src": "public/**",
             "use": "@vercel/static"
         }
@@ -48,6 +52,10 @@
         {
             "src": "/__debug",
             "dest": "/api/debug.php"
+        },
+        {
+            "src": "/__laravel-debug",
+            "dest": "/api/laravel-debug.php"
         },
         {
             "src": "/(.*)",
