@@ -31,10 +31,10 @@
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 mb-2">Pizza</h3>
                             <p class="text-sm text-gray-500 leading-relaxed mb-4">
-                                Roti manis lembut bertabur sosis premium berkualitas, berpadu saus tomat pilihan serta parutan keju gurih yang melimpah.
+                                Roti manis lembut berisi sosis, berpadu dengan saus tomat pilihan serta parutan keju gurih yang melimpah.
                             </p>
                         </div>
-                        <div class="text-lg font-extrabold text-gray-900">Rp 12.000 <span class="text-xs text-gray-400 font-normal">/ pcs</span></div>
+                        <div class="text-lg font-extrabold text-gray-900">Rp 3.500 <span class="text-xs text-gray-400 font-normal">/ pcs</span></div>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                                 Roti manis bertekstur krispi di luar dan lembut di dalam, dilapisi Topping kacang almond gurih renyah serta krim mentega pilihan.
                             </p>
                         </div>
-                        <div class="text-lg font-extrabold text-gray-900">Rp 15.000 <span class="text-xs text-gray-400 font-normal">/ pcs</span></div>
+                        <div class="text-lg font-extrabold text-gray-900">Rp 3.500 <span class="text-xs text-gray-400 font-normal">/ pcs</span></div>
                     </div>
                 </div>
             </div>
