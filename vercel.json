@@ -10,12 +10,17 @@
         "SESSION_DRIVER": "cookie",
         "QUEUE_CONNECTION": "sync",
         "FILESYSTEM_DISK": "local",
-        "APP_MAINTENANCE_DRIVER": "file"
+        "APP_MAINTENANCE_DRIVER": "file",
+        "VIEW_COMPILED_PATH": "/tmp/framework/views"
     },
     "buildCommand": "composer install --no-dev --optimize-autoloader && npm ci && npm run build",
     "builds": [
         {
             "src": "public/index.php",
+            "use": "vercel-php@0.7.4"
+        },
+        {
+            "src": "api/debug.php",
             "use": "vercel-php@0.7.4"
         },
         {
@@ -39,6 +44,10 @@
         {
             "src": "/robots.txt",
             "dest": "/public/robots.txt"
+        },
+        {
+            "src": "/__debug",
+            "dest": "/api/debug.php"
         },
         {
             "src": "/(.*)",

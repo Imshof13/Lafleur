@@ -5,6 +5,13 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+if (getenv('VERCEL')) {
+    @mkdir('/tmp/framework/cache', 0777, true);
+    @mkdir('/tmp/framework/sessions', 0777, true);
+    @mkdir('/tmp/framework/views', 0777, true);
+    @mkdir('/tmp/storage/logs', 0777, true);
+}
+
 // Determine if the application is in maintenance mode...
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
