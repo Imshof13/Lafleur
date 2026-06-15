@@ -123,4 +123,20 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    |
+    | Laravel 12 normally merges these from the framework defaults and
+    | bootstrap/providers.php. Vercel's PHP runtime can use cached config,
+    | so define them here too to keep core bindings like "view" available.
+    |
+    */
+
+    'providers' => Illuminate\Support\ServiceProvider::defaultProviders()->merge([
+        Illuminate\View\ViewServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+    ])->toArray(),
+
 ];
