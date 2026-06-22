@@ -12,7 +12,8 @@
         "APP_MAINTENANCE_DRIVER": "file",
         "VIEW_COMPILED_PATH": "/tmp/framework/views"
     },
-    "buildCommand": "composer install --no-dev --optimize-autoloader && npm ci && npm run build",
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.4"
