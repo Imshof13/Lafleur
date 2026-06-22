@@ -1,6 +1,5 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "version": 2,
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
@@ -14,52 +13,29 @@
         "VIEW_COMPILED_PATH": "/tmp/framework/views"
     },
     "buildCommand": "composer install --no-dev --optimize-autoloader && npm ci && npm run build",
-    "builds": [
-        {
-            "src": "public/index.php",
-            "use": "vercel-php@0.7.4"
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.4"
         },
-        {
-            "src": "api/debug.php",
-            "use": "vercel-php@0.7.4"
+        "api/debug.php": {
+            "runtime": "vercel-php@0.7.4"
         },
-        {
-            "src": "api/laravel-debug.php",
-            "use": "vercel-php@0.7.4"
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
+        "api/laravel-debug.php": {
+            "runtime": "vercel-php@0.7.4"
         }
-    ],
-    "routes": [
+    },
+    "rewrites": [
         {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
+            "source": "/__debug",
+            "destination": "/api/debug.php"
         },
         {
-            "src": "/images/(.*)",
-            "dest": "/public/images/$1"
+            "source": "/__laravel-debug",
+            "destination": "/api/laravel-debug.php"
         },
         {
-            "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
-        },
-        {
-            "src": "/robots.txt",
-            "dest": "/public/robots.txt"
-        },
-        {
-            "src": "/__debug",
-            "dest": "/api/debug.php"
-        },
-        {
-            "src": "/__laravel-debug",
-            "dest": "/api/laravel-debug.php"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/public/index.php"
+            "source": "/:path*",
+            "destination": "/api/index.php"
         }
     ]
 }
