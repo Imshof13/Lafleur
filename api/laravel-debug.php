@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\View\ViewServiceProvider;
 
 header('Content-Type: application/json');
 
@@ -13,6 +14,7 @@ try {
     require __DIR__.'/../vendor/autoload.php';
 
     $app = require __DIR__.'/../bootstrap/app.php';
+    $app->register(ViewServiceProvider::class);
 
     ob_start();
     $app->handleRequest(Request::create('/up', 'GET'));
